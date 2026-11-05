@@ -32,10 +32,10 @@
 ### 📊 GitHub Activity
 <p align="center">
   <a href="https://github.com/chavishkalakshan">
-    <img src="https://github-readme-stats.vercel.app/api?username=chavishkalakshan&amp;show_icons=true&amp;theme=radical&amp;hide_border=true" alt="GitHub Stats" />
+    <img src="https://github-readme-stats.vercel.app/api?username=chavishkalakshan&show_icons=true&theme=radical&hide_border=true&v=1" alt="GitHub Stats" />
   </a>
   <a href="https://github.com/chavishkalakshan">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=chavishkalakshan&amp;theme=radical&amp;hide_border=true" alt="GitHub Streak" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=chavishkalakshan&theme=radical&hide_border=true" alt="GitHub Streak" />
   </a>
 </p>
 
