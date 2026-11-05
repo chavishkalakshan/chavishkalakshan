@@ -43,7 +43,7 @@
 
 ### 🔗 Let's Connect
 <p align="center">
-  <a href="https://linkedin.com/in/yourlinkedinprofile"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="https://hackerrank.com/yourhackerrank"><img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/chavishka-lakshan-279541355/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="https://www.hackerrank.com/profile/chavishkalaksha2"><img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" /></a>
   <a href="mailto:chavishkalakshan94@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
