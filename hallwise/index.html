@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hallwise | Smart Lecture Booking</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#15233c;--muted:#6b7890;--line:#e3e9f2;--blue:#4167ef;--navy:#132343;--green:#087e61;--red:#bd3c52;--shadow:0 13px 42px rgba(18,38,78,.055)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}header{background:var(--navy);color:#fff} .top{max-width:1250px;margin:auto;padding:21px 24px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap} .logo{font-weight:800;font-size:24px;letter-spacing:-.8px}.logo span{color:#8eb3ff}.top small{color:#c4d3f1}.wrap{max-width:1250px;margin:auto;padding:28px 24px 58px}.heading{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:21px}h1{font-size:clamp(26px,3vw,36px);letter-spacing:-1.2px;line-height:1.15;margin:0 0 8px}p{margin:0;color:var(--muted)}.pill{background:#ecf2ff;color:#3659b9;border-radius:50px;padding:8px 12px;font-size:12px;font-weight:700}.grid{display:grid;grid-template-columns:1.12fr .88fr;gap:18px}.card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:17px;padding:21px}.card h2{font-size:19px;margin:0 0 5px;letter-spacing:-.4px}.hint{font-size:13px;color:var(--muted);margin-bottom:19px}.controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:15px}.controls input{flex:1;min-width:168px}.primary{background:var(--blue);border:1px solid var(--blue);color:white}.secondary{border:1px solid var(--line);background:#fff;color:var(--ink)}button{border-radius:10px;padding:10px 15px;font-weight:700;transition:transform .15s,background .15s}button:hover{transform:translateY(-1px)}.primary:hover{background:#3151d1}.secondary:hover{background:#f2f6fd}input,select{width:100%;min-width:0;padding:10px 12px;background:#fff;border:1px solid #d9e2ee;border-radius:9px;color:var(--ink)}label{display:block;font-size:12px;font-weight:750;color:#4b5b74;margin:0 0 6px}.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.wide{grid-column:1/-1}.row{display:flex;gap:9px}.row>*{min-width:0}.row select{flex:1}.formButtons{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.status{padding:13px 14px;border-radius:11px;margin-top:15px;font-size:14px;font-weight:650;display:none}.status.show{display:block}.status.ok{background:#ecfaf4;color:#087658}.status.error{background:#fff0f1;color:#aa3247}.status.info{background:#eef3ff;color:#2f56b1}.datebar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:16px}.datebar input{width:190px}.datebar button{padding:9px 13px}.subbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:17px}.filter{display:flex;gap:9px;align-items:center}.filter label{margin:0}.filter select{min-width:155px}.halls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.hall{background:#fbfcff;border:1px solid var(--line);border-radius:13px;padding:15px;min-height:177px}.hallHead{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:10px}.hallHead b{font-size:14px}.count{font-size:11px;background:#eaf0ff;color:#4763b8;border-radius:30px;padding:4px 8px;font-weight:800}.booking{background:#fff;border-left:3px solid #6f91ff;border-radius:7px;padding:10px 10px 9px;margin:8px 0;box-shadow:0 2px 9px rgba(18,38,78,.045)}.booking strong{font-size:13px}.booking small{color:var(--muted);display:block;font-size:11px}.cancel{border:none;color:#ad3a4f;background:transparent;padding:1px 0;font-size:11px;margin-top:4px}.empty{font-size:12px;color:#8a98ac;line-height:1.6;padding-top:8px}.suggestions{display:none;margin-top:17px;border-top:1px solid var(--line);padding-top:16px}.suggestions h3{margin:0 0 11px;font-size:16px}.option{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px;border:1px solid var(--line);border-radius:11px;margin-top:9px;background:#f8faff}.option b{font-size:13px}.option small{display:block;color:var(--muted);font-size:12px}.option button{padding:8px 11px;font-size:12px;white-space:nowrap}.learning{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px}.num{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;color:#fff;background:#5879f4;border-radius:8px;margin-bottom:10px;font-weight:800}.step b{display:block;margin-bottom:5px}.step p{font-size:13px}.bottom{font-size:12px;color:var(--muted);text-align:center;margin-top:24px}code{background:#eef2ff;padding:2px 6px;border-radius:4px;color:#344ea5}@media(max-width:900px){.grid{grid-template-columns:1fr}.halls{grid-template-columns:1fr 1fr}.learning{grid-template-columns:1fr}}@media(max-width:560px){.wrap{padding:20px 13px}.card{padding:16px}.halls{grid-template-columns:1fr}.form{gap:11px}.option{align-items:flex-start}.option button{white-space:normal}.datebar input{width:100%}.top{padding:18px 15px}}
+</style>
+</head>
+<body>
+<header><div class="top"><div class="logo">Hall<span>wise</span> <small> / University Lecture Allocation</small></div><small>DSA Project • Arrays + BST</small></div></header>
+<main class="wrap">
+  <div class="heading"><div><h1>Book a lecture. Avoid clashes.</h1><p>Choose any date, select a lecturer, and find another slot when needed.</p></div><div class="pill">08:00–17:00 · Monday–Friday</div></div>
+  <div class="grid">
+    <section class="card" aria-label="Booking form">
+      <h2>New lecture booking</h2><div class="hint">Select your preferred date — it can be today or a future week.</div>
+      <form id="form" class="form">
+        <div class="wide"><label for="bookDate">Preferred date</label><input type="date" id="bookDate" required></div>
+        <div><label for="bookHall">Hall</label><select id="bookHall"><option value="0">Main Auditorium</option><option value="1">Lab A</option><option value="2">Hall B</option></select></div>
+        <div><label for="course">Course</label><input id="course" placeholder="e.g. COE2201" required maxlength="25"></div>
+        <div><label for="start">Start time</label><input id="start" type="time" value="09:00" required></div>
+        <div><label for="end">End time</label><input id="end" type="time" value="10:00" required></div>
+        <div class="wide"><label for="bookLecturer">Lecturer</label><div class="row"><select id="bookLecturer"></select><button type="button" id="addLecturer" class="secondary">+ Add</button></div></div>
+      </form>
+      <div class="formButtons"><button id="bookButton" class="primary" type="submit" form="form">Book lecture</button><button id="checkButton" class="secondary" type="button">Check availability</button></div>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <div id="suggestions" class="suggestions"><h3>Available alternatives</h3><div id="options"></div></div>
+    </section>
+    <section class="card" aria-label="Daily schedule">
+      <h2>Daily schedule</h2><div class="hint">Browse any day — not only one selected week.</div>
+      <div class="datebar"><button id="prev" type="button" class="secondary" aria-label="Previous date">‹</button><input id="viewDate" type="date"><button id="next" type="button" class="secondary" aria-label="Next date">›</button><button id="today" type="button" class="primary">Today</button></div>
+      <div class="subbar"><strong id="dateTitle"></strong><div class="filter"><label for="filterLecturer">Lecturer</label><select id="filterLecturer"></select></div></div>
+      <div id="halls" class="halls"></div>
+      <div class="controls"><button class="secondary" id="demo" type="button">Load example lectures</button><button class="secondary" id="reset" type="button">Clear saved data</button></div>
+    </section>
+  </div>
+  <div class="learning">
+    <div class="step"><span class="num">1</span><b>Find the date</b><p>An array stores the dates. Each date has three hall BSTs.</p></div>
+    <div class="step"><span class="num">2</span><b>Search for clashes</b><p>Follow <code>left</code> and <code>right</code> pointers to check overlapping times.</p></div>
+    <div class="step"><span class="num">3</span><b>Suggest another slot</b><p>Try another hall, a later time, or a later working day. Accept with one click.</p></div>
+  </div>
+  <p class="bottom">Demo website: data is saved only in this browser, not shared with other lecturers or the C++ console program.</p>
+</main>
+<script>
+// Simple Javascript version of the same BST algorithm used in the C++ file.
+const hallNames = ['Main Auditorium', 'Lab A', 'Hall B'];
+const $ = id => document.getElementById(id);
+const key = 'hallwise-any-date-simple-v1';
+const pad = n => String(n).padStart(2, '0');
+const todayDate = () => { const d = new Date(); return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; };
+const addDays = (date, n) => { const d = new Date(date + 'T12:00:00'); d.setDate(d.getDate()+n); return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; };
+const weekday = date => {const n = new Date(date+'T12:00:00').getDay();return n !== 0 && n !== 6;};
+const toMin = time => {if (!/^\d{2}:\d{2}$/.test(time)) return NaN; const [h,m]=time.split(':').map(Number);return h*60+m;};
+const clock = min => `${pad(Math.floor(min/60))}:${pad(min%60)}`;
+const safe = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+class Node {
+  constructor(start, end, course, lecturer) {
+    this.start=start; this.end=end; this.course=course; this.lecturer=lecturer;
+    this.left=null; this.right=null;
+  }
+}
+class BST {
+  constructor(){this.root=null;}
+  clash(start,end){
+    let node=this.root;
+    while(node){
+      if(start<node.end && end>node.start)return node;
+      node=start<node.start?node.left:node.right;
+    }
+    return null;
+  }
+  add(start,end,course,lecturer){
+    if(this.clash(start,end))return false;
+    const fresh=new Node(start,end,course,lecturer);
+    if(!this.root){this.root=fresh;return true;}
+    let node=this.root;
+    while(true){
+      if(start<node.start){if(!node.left){node.left=fresh;break;}node=node.left;}
+      else {if(!node.right){node.right=fresh;break;}node=node.right;}
+    }
+    return true;
+  }
+  all(){
+    let result=[];
+    function visit(node){if(!node)return;visit(node.left);result.push(node);visit(node.right);}
+    visit(this.root); return result;
+  }
+  // This BST deletion also handles 0, 1 or 2 children.
+  remove(start){
+    let removed=false;
+    function erase(node,start){
+      if(!node)return null;
+      if(start<node.start)node.left=erase(node.left,start);
+      else if(start>node.start)node.right=erase(node.right,start);
+      else {
+        removed=true;
+        if(!node.left)return node.right;
+        if(!node.right)return node.left;
+        let next=node.right;
+        while(next.left)next=next.left;
+        node.start=next.start;node.end=next.end;
+        node.course=next.course;node.lecturer=next.lecturer;
+        node.right=erase(node.right,next.start);
+      }
+      return node;
+    }
+    this.root=erase(this.root,start);
+    return removed;
+  }
+}
+
+let dates=[]; // Each entry: {date: 'YYYY-MM-DD', halls: [BST, BST, BST]}
+let lecturers=['L001','L002','L003','L004'];
+let suggestions=[];
+function dayData(date,create=false){
+  let day=dates.find(d=>d.date===date);
+  if(!day && create){day={date,halls:[new BST(),new BST(),new BST()]};dates.push(day);}
+  return day;
+}
+function save(){
+  const bookings=[];
+  dates.forEach(day=>day.halls.forEach((tree,h)=>tree.all().forEach(n=>bookings.push({date:day.date,h,start:n.start,end:n.end,course:n.course,lecturer:n.lecturer}))));
+  localStorage.setItem(key,JSON.stringify({bookings,lecturers}));
+}
+function load(){
+  try {
+    const data=JSON.parse(localStorage.getItem(key)||'{}');
+    if(Array.isArray(data.lecturers))lecturers=[...new Set(data.lecturers.filter(n=>/^[A-Za-z0-9_-]{1,25}$/.test(n)))];
+    if(!lecturers.length)lecturers=['L001'];
+    (data.bookings||[]).forEach(n=>{
+      if(!n.date||!weekday(n.date)||n.h<0||n.h>2||!Number.isInteger(n.start)||!Number.isInteger(n.end)||n.start<480||n.end>1020||n.start>=n.end)return;
+      dayData(n.date,true).halls[n.h].add(n.start,n.end,n.course,n.lecturer);
+    });
+  } catch(e){dates=[];}
+}
+function updateLecturers(){
+  const selected=$('bookLecturer').value;
+  $('bookLecturer').innerHTML=lecturers.map(l=>`<option value="${safe(l)}">${safe(l)}</option>`).join('');
+  if(lecturers.includes(selected))$('bookLecturer').value=selected;
+  const old=$('filterLecturer').value;
+  $('filterLecturer').innerHTML='<option value="ALL">All lecturers</option>'+lecturers.map(l=>`<option value="${safe(l)}">${safe(l)}</option>`).join('');
+  if(lecturers.includes(old))$('filterLecturer').value=old;
+}
+function busy(date,start,end,lecturer){
+  const day=dayData(date);
+  if(!day)return null;
+  for(let h=0;h<3;h++)for(let n of day.halls[h].all())
+    if(n.lecturer===lecturer && start<n.end && end>n.start)return {hall:h,node:n};
+  return null;
+}
+function available(date,h,start,end,lecturer){
+  if(!weekday(date)||start<480||end>1020||start>=end)return false;
+  const day=dayData(date);
+  return !(day && day.halls[h].clash(start,end)) && !busy(date,start,end,lecturer);
+}
+function makeBooking(date,h,start,end,course,lecturer){
+  if(!available(date,h,start,end,lecturer))return false;
+  const success=dayData(date,true).halls[h].add(start,end,course,lecturer);
+  if(success)save();
+  return success;
+}
+function status(message,type){const el=$('status');el.textContent=message;el.className='status show '+type;}
+function currentForm(){
+  const date=$('bookDate').value, h=Number($('bookHall').value), start=toMin($('start').value),end=toMin($('end').value);
+  const course=$('course').value.trim().toUpperCase(), lecturer=$('bookLecturer').value;
+  if(!date)return {error:'Please choose a date.'};
+  if(!weekday(date))return {error:'Booking is allowed Monday to Friday. You can still view weekends.'};
+  if(!Number.isInteger(start)||!Number.isInteger(end)||start<480||end>1020||start>=end)return {error:'Use valid times between 08:00 and 17:00.'};
+  if(!/^[A-Z0-9_-]{1,25}$/.test(course))return {error:'Enter a course code (letters, numbers, - or _).'};
+  return {date,h,start,end,course,lecturer};
+}
+function suggestionsFor(f){
+  const result=[]; const duration=f.end-f.start;
+  // 1. Another hall at the same time.
+  for(let h=0;h<3;h++)if(h!==f.h&&available(f.date,h,f.start,f.end,f.lecturer))
+    result.push({date:f.date,h,start:f.start,end:f.end,reason:'Another hall · same time'});
+  // 2. Same hall later; search in minute steps, preserving exact duration.
+  for(let m=f.start+1;m+duration<=1020;m++){
+    if(available(f.date,f.h,m,m+duration,f.lecturer)){
+      result.push({date:f.date,h:f.h,start:m,end:m+duration,reason:'Later time · same hall'});break;
+    }
+  }
+  // 3. Next working day with a free hall.
+  outer:for(let d=1;d<=14;d++){
+    const date=addDays(f.date,d);
+    if(!weekday(date))continue;
+    for(let h=0;h<3;h++)if(available(date,h,f.start,f.end,f.lecturer)){
+      result.push({date,h,start:f.start,end:f.end,reason:'Next available working date'});
+      break outer;
+    }
+  }
+  return result;
+}
+function showSuggestions(f){
+  suggestions=suggestionsFor(f);
+  $('suggestions').style.display='block';
+  $('options').innerHTML=suggestions.length?suggestions.map((s,i)=>`<div class="option"><div><b>${safe(s.reason)}</b><small>${safe(s.date)} · ${safe(hallNames[s.h])} · ${clock(s.start)}–${clock(s.end)}</small></div><button type="button" class="primary" data-suggest="${i}">Accept</button></div>`).join(''):'<p>No free alternatives found within the next 14 days.</p>';
+}
+function clearSuggestions(){suggestions=[];$('suggestions').style.display='none';}
+function render(){
+  const date=$('viewDate').value, filter=$('filterLecturer').value;
+  const dateObj=new Date(date+'T12:00:00');
+  $('dateTitle').textContent=dateObj.toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric',year:'numeric'});
+  const day=dayData(date);
+  $('halls').innerHTML=hallNames.map((name,h)=>{
+    const nodes=day?day.halls[h].all():[];
+    const visible=nodes.filter(n=>filter==='ALL'||n.lecturer===filter);
+    return `<article class="hall"><div class="hallHead"><b>${safe(name)}</b><span class="count">${nodes.length}</span></div>${visible.length?visible.map(n=>`<div class="booking"><strong>${clock(n.start)}–${clock(n.end)}</strong><small>${safe(n.course)} · ${safe(n.lecturer)}</small><button class="cancel" data-hall="${h}" data-start="${n.start}" type="button">Cancel booking</button></div>`).join(''):`<div class="empty">${nodes.length?'No bookings for this lecturer.':'No bookings yet.'}</div>`}</article>`;
+  }).join('');
+}
+function showDate(date){$('viewDate').value=date;$('bookDate').value=date;render();}
+$('form').addEventListener('submit',e=>{
+  e.preventDefault();clearSuggestions();
+  const f=currentForm();if(f.error){status(f.error,'error');return;}
+  if(makeBooking(f.date,f.h,f.start,f.end,f.course,f.lecturer)){
+    showDate(f.date);status(`Booked ${f.course} with ${f.lecturer} in ${hallNames[f.h]}, ${clock(f.start)}–${clock(f.end)}.`,'ok');
+  }else {
+    const day=dayData(f.date), hallClash=day&&day.halls[f.h].clash(f.start,f.end), teacher=busy(f.date,f.start,f.end,f.lecturer);
+    const reason=[hallClash?`Hall already booked for ${hallClash.course}`:null,teacher?`Lecturer ${f.lecturer} is busy in ${hallNames[teacher.hall]}`:null].filter(Boolean).join('. ');
+    status(`Clash detected. ${reason}. Choose a suggested alternative below.`,'error');showSuggestions(f);
+  }
+});
+$('checkButton').addEventListener('click',()=>{
+  clearSuggestions();const f=currentForm();if(f.error){status(f.error,'error');return;}
+  if(available(f.date,f.h,f.start,f.end,f.lecturer))status('Available! The hall and selected lecturer are both free.','ok');
+  else {status('Unavailable: the hall or lecturer is busy. See alternative options.','error');showSuggestions(f);}
+});
+$('options').addEventListener('click',e=>{
+  const b=e.target.closest('[data-suggest]');if(!b)return;
+  const s=suggestions[Number(b.dataset.suggest)];if(!s)return;
+  const course=$('course').value.trim().toUpperCase(),lecturer=$('bookLecturer').value;
+  if(makeBooking(s.date,s.h,s.start,s.end,course,lecturer)){
+    showDate(s.date);$('bookHall').value=s.h;$('start').value=clock(s.start);$('end').value=clock(s.end);
+    status(`Alternative accepted! ${course} booked on ${s.date} in ${hallNames[s.h]}.`,'ok');clearSuggestions();
+  } else {status('That suggestion is no longer available. Try again.','error');clearSuggestions();}
+});
+$('halls').addEventListener('click',e=>{
+  const b=e.target.closest('[data-start]');if(!b)return;
+  const date=$('viewDate').value,h=Number(b.dataset.hall),start=Number(b.dataset.start);
+  if(!confirm('Cancel this lecture booking?'))return;
+  const day=dayData(date);if(day&&day.halls[h].remove(start)){save();render();status('Booking cancelled.','ok');clearSuggestions();}
+});
+$('addLecturer').addEventListener('click',()=>{
+  let id=prompt('Enter a lecturer ID (e.g. L005):');if(id===null)return;
+  id=id.trim().toUpperCase();
+  if(!/^[A-Z0-9_-]{1,25}$/.test(id)){status('Please use 1–25 letters, numbers, hyphens or underscores.','error');return;}
+  if(!lecturers.includes(id))lecturers.push(id);
+  updateLecturers();$('bookLecturer').value=id;save();status(`Lecturer ${id} is ready to select.`,'ok');
+});
+$('viewDate').addEventListener('change',()=>{render();});
+$('filterLecturer').addEventListener('change',render);
+$('prev').addEventListener('click',()=>showDate(addDays($('viewDate').value,-1)));
+$('next').addEventListener('click',()=>showDate(addDays($('viewDate').value,1)));
+$('today').addEventListener('click',()=>showDate(todayDate()));
+$('demo').addEventListener('click',()=>{
+  const date=$('viewDate').value;
+  if(!weekday(date)){status('Please select a Monday–Friday date to load sample lectures.','error');return;}
+  if(!confirm('Add example lectures to this date?'))return;
+  [['L001','COE2201',0,540,660],['L002','MAT2104',1,600,720],['L003','PHY2102',2,780,870]].forEach(a=>{
+    if(!lecturers.includes(a[0]))lecturers.push(a[0]);
+    makeBooking(date,a[2],a[3],a[4],a[1],a[0]);
+  });
+  updateLecturers();render();status('Examples loaded. Try booking Main Auditorium from 09:30–10:30.','info');
+});
+$('reset').addEventListener('click',()=>{
+  if(!confirm('Delete all locally saved bookings and lecturer IDs?'))return;
+  dates=[];lecturers=['L001','L002','L003','L004'];save();updateLecturers();render();clearSuggestions();status('Local demo data cleared.','ok');
+});
+load();updateLecturers();showDate(todayDate());
+</script>
+</body>
+</html>
